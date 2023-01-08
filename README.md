@@ -1,5 +1,9 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+
+
+This is the starter code for student Omar Junior Osorio León in CSE 210.
+
+I'm sure it's going to be an awesome semester!
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
