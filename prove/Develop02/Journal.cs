@@ -35,7 +35,7 @@ public class Journal
         }
         else
         {
-            Console.Write($"\n{_userFileName} already exits.\n");
+            Console.Write($"{_userFileName} already exits.");
             Console.Write("Entries added.\n");
             AppendFile(_userFileName);
         }

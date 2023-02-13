@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 class Program
 {
@@ -70,16 +71,16 @@ Please, select an option to continue: ";
 
         try
         {
-        option = int.Parse(userInput);
+            option = int.Parse(userInput);
         }
         catch (FormatException)
         {
-        option = 0;
+            option = 0;
         }
         catch (Exception exception)
         {
-        Console.WriteLine(
-            $"Error: {exception.Message}");
+            Console.WriteLine(
+                $"Error: {exception.Message}");
         }
         return option;
         }
@@ -94,5 +95,13 @@ Please, select an option to continue: ";
     {
         string MyJournalFile = "MyJournal.txt";
         File.AppendAllText(MyJournalFile, "");
+    }
+
+    static string GetEntryId()
+    {
+        Guid entryuuid = Guid.NewGuid();
+        string entryuuidAsString = entryuuid.ToString();
+
+        return entryuuidAsString;
     }
 }
