@@ -68,8 +68,4 @@ public class Activity{
     Console.WriteLine($"We really hope you enjoyed and relaxed with it!");
     Console.WriteLine($"We hope to see you soon again!");
    }
-
-
-
-
 }
