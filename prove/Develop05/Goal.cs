@@ -32,7 +32,7 @@ public class Goal {
 
     public string SetTitle()
     {
-        Console.WriteLine("Please, enter a name fot this goal: ");
+        Console.WriteLine("Please, enter a name for this goal: ");
         return Console.ReadLine();
     }
 

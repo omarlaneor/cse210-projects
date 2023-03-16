@@ -1,6 +1,6 @@
 using System.Text;
 
-public class Progress{
+public class Events{
     private int _totalPoints{get; set;} = 0;
     private Dictionary<int, Goal> _goalDictionary = new Dictionary<int, Goal>();
 
@@ -15,7 +15,7 @@ public class Progress{
                 }
         }
         Console.WriteLine();
-        Console.WriteLine($"you have {_totalPoints} points");
+        Console.WriteLine($"You have {_totalPoints} points");
     }
 
     private string IsAchievedDisplay(bool isComplete){
@@ -49,7 +49,7 @@ public class Progress{
         for (int i = 1; i <= _goalDictionary.Count(); i++){
             Console.WriteLine($"{i}. {_goalDictionary[i]._goalTitle}");
         }
-        Console.WriteLine("Which goal did you accomplish? ");
+        Console.WriteLine("Which goal were you working on?: ");
         string input = Console.ReadLine();
         if (int.TryParse(input, out int goalNumber))
             {
@@ -57,7 +57,7 @@ public class Progress{
                     _totalPoints += _goalDictionary[goalNumber].RecordEvent();
                 }
                 else{
-                    Console.WriteLine("invalid number entered.");
+                    Console.WriteLine("Invalid number entered.");
                 }
             }
         else
@@ -89,11 +89,11 @@ public class Progress{
         try
         {
             File.WriteAllText(file, goals.ToString());
-            Console.WriteLine($"Goals saved to {file}");
+            Console.WriteLine($"Goals saved as {file}");
         }
         catch (Exception)
         {
-            Console.WriteLine("Data could not be written to the file.");
+            Console.WriteLine("Data could not be written to this file.");
             return;
         }
 }

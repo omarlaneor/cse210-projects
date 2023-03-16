@@ -6,7 +6,7 @@ class Program
     {
         var GoalMenu = true;
         var quit = false;
-        var progress = new Progress();
+        var events = new Events();
         while (!quit) 
         {
             var input = Menu.GetInput();
@@ -19,39 +19,39 @@ class Program
                     switch(input){
 
                         case "1":
-                            progress.AddGoal(MenuGoals.SimpleGoal);
+                            events.AddGoal(MenuGoals.SimpleGoal);
                         break;
 
                         case "2":
-                            progress.AddGoal(MenuGoals.EternalGoal);
+                            events.AddGoal(MenuGoals.EternalGoal);
                         break;
 
                         case "3":
-                            progress.AddGoal(MenuGoals.ChecklistGoal);
+                            events.AddGoal(MenuGoals.ChecklistGoal);
                         break;
                     }
                     break;
 
                 case "2":
-                    progress.DisplayList();
+                    events.DisplayList();
                     break;
 
                 case "3":
                     Console.Write($"Save as: ");
                     var file = Console.ReadLine();
-                    progress.Save(file);
+                    events.Save(file);
                     break;
 
                 case "4":
                     Console.Write($"What's the name of the file?: ");
                     file = Console.ReadLine();
-                    progress.Load(file);
+                    events.Load(file);
                     break;
 
                 case "5":
-                    if(progress.GetListNumber() > 1)
+                    if(events.GetListNumber() > 1)
                     {
-                        progress.GetRecordEvent();
+                        events.GetRecordEvent();
                     }
                     else{
                         Console.WriteLine("Please, remember to create a goal first.");
